@@ -32,6 +32,7 @@ import android.os.RemoteException;
 import android.telecom.Connection;
 import android.telecom.Log;
 import android.telecom.PhoneAccount;
+import android.telecom.TelecomManager;
 import android.telecom.PhoneAccountHandle;
 import android.telecom.VideoProfile;
 import android.telephony.PhoneNumberUtils;
@@ -283,10 +284,8 @@ public class BluetoothPhoneServiceImpl {
             }
         }
 
-       /**isHighDefCallInProgress
-        * Returns true  if there is any Call is in Progress with High Definition
-        *               quality
-        *         false otherwise.
+       /**
+        * @return true if there is any call is in progress with High Definition.
         */
         @Override
         public boolean isHighDefCallInProgress() {
