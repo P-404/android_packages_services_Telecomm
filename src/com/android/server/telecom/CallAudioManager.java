@@ -465,7 +465,6 @@ public class CallAudioManager extends CallsManagerListenerBase {
             if(mIsInCrsMode) {
                 Log.i(this, "Fire silence CRS.");
                 onCallSilenceCrs();
-                mRinger.stopPlayCrs();
             }
             mRinger.stopRinging();
             mRinger.stopCallWaiting();
@@ -689,7 +688,7 @@ public class CallAudioManager extends CallsManagerListenerBase {
     private void onCallSilenceCrs() {
         if (mRingingCalls.size() == 1) {
             mCallAudioModeStateMachine.sendMessageWithArgs(
-                    CallAudioModeStateMachine.NO_MORE_RINGING_CALLS,
+                    CallAudioModeStateMachine.CRS_CHANGE_SILENCE,
                     makeArgsForModeStateMachine());
         }
     }
